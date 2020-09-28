@@ -1,4 +1,5 @@
 import time
+from binary_search import BSTNode
 
 start_time = time.time()
 
@@ -13,10 +14,20 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
+
+# On My computer, this ran in 4.2 Seconds on first run, 3.8 seconds on second run
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
             duplicates.append(name_1)
+
+# Binary Search reduces runtime to .07 seconds on first run, .05 on second run
+tree = BSTNode('Empty')
+for name in names_1:
+    tree.insert(name)
+for name in names_2:
+    if tree.contains(name):
+        duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

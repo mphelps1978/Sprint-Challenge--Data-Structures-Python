@@ -19,7 +19,7 @@ class RingBuffer:
             if self.oldest + 1 < self.capacity:
                 self.oldest += 1
 
-            else:
+            else: #and if we can't, we just reset it to the first item in the list
                 self.oldest = 0
 
     def get(self):
