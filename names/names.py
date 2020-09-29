@@ -15,13 +15,13 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
 
-# On My computer, this ran in 4.2 Seconds on first run, 3.8 seconds on second run
+# On My computer, this ran in 4.2 Seconds on first run, 3.8 seconds on second run (O(n^2))
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
             duplicates.append(name_1)
 
-# Binary Search reduces runtime to .07 seconds on first run, .05 on second run
+# Binary Search reduces runtime to .07 seconds on first run, .05 on second run (O(n))
 tree = BSTNode('Empty')
 for name in names_1:
     tree.insert(name)
